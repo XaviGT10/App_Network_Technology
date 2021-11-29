@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/tecnologyListFragment">
+
+    <fragment
+        android:id="@+id/tecnologyListFragment"
+        android:name="com.xgt.demo_networktecnologies.TecnologyListFragment"
+        android:label="fragment_tecnology_list"
+        tools:layout="@layout/fragment_tecnology_list" >
+        <action
+            android:id="@+id/action_tecnologyListFragment_to_tecnologyDetailFragment"
+            app:destination="@id/tecnologyDetailFragment" />
+        <action
+            android:id="@+id/action_tecnologyListFragment_to_tecnologyAddFragment"
+            app:destination="@id/tecnologyAddFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tecnologyAddFragment"
+        android:name="com.xgt.demo_networktecnologies.TecnologyAddFragment"
+        android:label="fragment_tecnology_add"
+        tools:layout="@layout/fragment_tecnology_add" />
+    <fragment
+        android:id="@+id/tecnologyDetailFragment"
+        android:name="com.xgt.demo_networktecnologies.TecnologyDetailFragment"
+        android:label="fragment_tecnology_detail"
+        tools:layout="@layout/fragment_tecnology_detail" />
+</navigation>
