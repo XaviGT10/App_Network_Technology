@@ -26,5 +26,9 @@
         android:id="@+id/tecnologyDetailFragment"
         android:name="com.xgt.demo_networktecnologies.TecnologyDetailFragment"
         android:label="fragment_tecnology_detail"
-        tools:layout="@layout/fragment_tecnology_detail" />
+        tools:layout="@layout/fragment_tecnology_detail" >
+        <argument
+            android:name="techId"
+            app:argType="string" />
+    </fragment>
 </navigation>
