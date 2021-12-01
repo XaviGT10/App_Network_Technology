@@ -6,13 +6,14 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.squareup.picasso.Picasso
 import com.xgt.demo_networktecnologies.databinding.ItemTecnologyBinding
 import com.xgt.demo_networktecnologies.extension.imageUrl
 import com.xgt.demo_networktecnologies.model.Tecnology
 
-class TecnologyAdapter:
+class TecnologyAdapter (private val onTecClicked: (Tecnology) -> Unit) :
     ListAdapter<Tecnology, TecnologyAdapter.ViewHolder>(TecnologyCallback()) {
+
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -25,6 +26,9 @@ class TecnologyAdapter:
         holder.binding.tvName.text = tecnology.name
         holder.binding.tvDescription.text = tecnology.description
         holder.binding.ivTech.imageUrl(tecnology.imageUrl)
+        holder.binding.root.setOnClickListener {
+            onTecClicked(tecnology)
+        }
     }
 
     inner class ViewHolder(val binding: ItemTecnologyBinding) : RecyclerView.ViewHolder(binding.root)
