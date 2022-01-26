@@ -31,4 +31,9 @@
             android:name="techId"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/imageListFragment"
+        android:name="com.xgt.demo_networktecnologies.ImageListFragment"
+        android:label="fragment_image_list"
+        tools:layout="@layout/fragment_image_list" />
 </navigation>

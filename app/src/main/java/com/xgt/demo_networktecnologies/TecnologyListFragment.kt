@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.xgt.demo_networktecnologies.databinding.FragmentTecnologyListBinding
 import com.xgt.demo_networktecnologies.model.Tecnology
+import com.xgt.demo_networktecnologies.network.TecnologyApi
 import com.xgt.demo_networktecnologies.network.TecnologyService
 import retrofit2.Call
 import retrofit2.Callback
@@ -26,10 +27,10 @@ class TecnologyListFragment : Fragment() {
         get() = _binding!!
 
 
-    private val adapter = TecnologyAdapter({
+    private val adapter = TecnologyAdapter{
         val action = TecnologyListFragmentDirections.actionTecnologyListFragmentToTecnologyDetailFragment(it.id)
         findNavController().navigate(action)
-    })
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,19 +43,12 @@ class TecnologyListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         configUi()
-
         requestData()
 
     }
 
     private fun requestData() {
-        val retrofit = Retrofit.Builder()
-            .baseUrl("http://10.1.204.115:3000")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-
-        val service: TecnologyService = retrofit.create(TecnologyService::class.java)
-        service.getTechnologies().enqueue(object : Callback<List<Tecnology>> {
+        TecnologyApi.service.getTechnologies().enqueue(object : Callback<List<Tecnology>> {
             override fun onResponse(
                 call: Call<List<Tecnology>>,
                 response: Response<List<Tecnology>>
