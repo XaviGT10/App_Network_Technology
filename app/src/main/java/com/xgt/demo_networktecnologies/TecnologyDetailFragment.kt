@@ -37,7 +37,7 @@ class TecnologyDetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.tvNoSeQue.text = args.techId
+    //    binding.tvNoSeQue.text = args.techId
         args.techId?.let{
             requestData(it)
         } ?: showError("TechId null")
@@ -49,7 +49,7 @@ class TecnologyDetailFragment : Fragment() {
 
     private fun requestData(techId: String) {
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://10.1.204.115:3000")
+            .baseUrl("http://10.1.200.78:3000")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
