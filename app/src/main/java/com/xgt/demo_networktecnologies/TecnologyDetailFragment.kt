@@ -49,7 +49,7 @@ class TecnologyDetailFragment : Fragment() {
 
     private fun requestData(techId: String) {
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://192.168.160.224:3000")
+            .baseUrl("http://172.26.112.1:3000")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
