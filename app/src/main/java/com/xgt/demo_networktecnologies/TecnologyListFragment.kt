@@ -44,7 +44,6 @@ class TecnologyListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         configUi()
         requestData()
-
     }
 
     private fun requestData() {
@@ -70,7 +69,6 @@ class TecnologyListFragment : Fragment() {
         })
     }
 
-
     private fun configUi() {
         binding.fabAddTech.setOnClickListener{
             val action = TecnologyListFragmentDirections.actionTecnologyListFragmentToTecnologyAddFragment()
@@ -85,5 +83,4 @@ class TecnologyListFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
 }

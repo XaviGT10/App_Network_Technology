@@ -42,14 +42,14 @@ class TecnologyAddFragment : Fragment() {
 
     private fun validateFields(): Boolean {
 //        binding.etTechName.error = null
-        val techName = binding.tvNameTech.text.toString()
+        val techName = binding.etNameTech.text.toString()
         if (techName.isEmpty()) {
 //            binding.etTechName.error = "TechName is empty"
             showError("TechName is empty")
             return false
         }
 
-        val techDescription = binding.tvTechDescroption.text.toString()
+        val techDescription = binding.etDescription.text.toString()
         if (techDescription.isEmpty()) {
             showError("TechDescription is empty")
             return false
@@ -62,9 +62,9 @@ class TecnologyAddFragment : Fragment() {
     }
 
     private fun sendTechnologyToServer() {
-        val techName = binding.tvNameTech.text.toString()
-        val techDescription = binding.tvTechDescroption.text.toString()
-        val techImageUrl = binding.tvImageUrl.text.toString()
+        val techName = binding.etNameTech.text.toString()
+        val techDescription = binding.etDescription.text.toString()
+        val techImageUrl = binding.etUrlImage.text.toString()
         val techRequest = TecnologyRequest(techName, techDescription, techImageUrl)
 
         TecnologyApi.service.createTechnology(techRequest).enqueue(object : Callback<Any> {
@@ -89,9 +89,9 @@ class TecnologyAddFragment : Fragment() {
     }
 
     private fun resetScreen() {
-        binding.tvNameTech.text = null
-        binding.tvTechDescroption.text = null
-        binding.tvImageUrl.text = null
+        binding.etDescription.text = null
+        binding.etDescription.text = null
+        binding.etUrlImage.text = null
     }
 
     override fun onDestroyView() {

@@ -6,53 +6,69 @@
     android:layout_height="match_parent"
     tools:context=".TecnologyAddFragment">
 
-    <TextView
-        android:id="@+id/tv_name_tech"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_tech_descroption"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="32dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_name_tech" />
-
     <Button
         android:id="@+id/btn_add_tecnology"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="170dp"
-        android:layout_marginTop="69dp"
+        android:layout_marginTop="19dp"
         android:layout_marginEnd="147dp"
+        android:layout_marginBottom="398dp"
         android:stateListAnimator="@anim/label_add_technology"
-        android:text="Button"
+        android:text="Añadir tecnologia"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.616"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_url_image" />
+
+    <EditText
+        android:id="@+id/et__name_tech"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="22dp"
+        android:fontFamily="@font/fuente_philosopher"
+        android:text="Nombre"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/et_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="23dp"
+        android:fontFamily="@font/fuente_philosopher"
+        android:text="Descripcion"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/et_url_image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_image_url" />
+        app:layout_constraintTop_toBottomOf="@+id/et__name_tech" />
 
-    <TextView
-        android:id="@+id/tv_image_url"
+    <EditText
+        android:id="@+id/et_url_image"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
-        android:text="TextView"
+        android:layout_marginBottom="26dp"
+        android:fontFamily="@font/fuente_philosopher"
+        android:text="url image"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_add_tecnology"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_tech_descroption" />
+        app:layout_constraintTop_toBottomOf="@+id/et_description" />
 </androidx.constraintlayout.widget.ConstraintLayout>

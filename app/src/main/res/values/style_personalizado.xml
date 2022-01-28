@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Estilo_Texto_Personalizado" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">#2893BC</item>
+    </style>
+</resources>
