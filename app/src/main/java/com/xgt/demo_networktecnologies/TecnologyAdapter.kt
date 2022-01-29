@@ -13,8 +13,6 @@ import com.xgt.demo_networktecnologies.model.Tecnology
 class TecnologyAdapter (private val onTecClicked: (Tecnology) -> Unit) :
     ListAdapter<Tecnology, TecnologyAdapter.ViewHolder>(TecnologyCallback()) {
 
-
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = ItemTecnologyBinding.inflate(inflater, parent, false)
@@ -36,7 +34,5 @@ class TecnologyAdapter (private val onTecClicked: (Tecnology) -> Unit) :
 
 class TecnologyCallback : DiffUtil.ItemCallback<Tecnology>(){
     override fun areItemsTheSame(oldItem: Tecnology, newItem: Tecnology): Boolean = oldItem.id == newItem.id
-
     override fun areContentsTheSame(oldItem: Tecnology, newItem: Tecnology): Boolean = oldItem.id == newItem.id
-
 }

@@ -26,7 +26,6 @@ class TecnologyListFragment : Fragment() {
     private val binding
         get() = _binding!!
 
-
     private val adapter = TecnologyAdapter{
         val action = TecnologyListFragmentDirections.actionTecnologyListFragmentToTecnologyDetailFragment(it.id)
         findNavController().navigate(action)
@@ -74,7 +73,6 @@ class TecnologyListFragment : Fragment() {
             val action = TecnologyListFragmentDirections.actionTecnologyListFragmentToTecnologyAddFragment()
             findNavController().navigate(action)
         }
-
         binding.rvTecnologies.layoutManager = GridLayoutManager(context, 2)
         binding.rvTecnologies.adapter = adapter
     }

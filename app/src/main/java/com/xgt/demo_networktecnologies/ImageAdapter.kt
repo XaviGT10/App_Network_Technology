@@ -23,12 +23,9 @@ class ImageAdapter(private val imageClickedListener: (Image) -> Unit) : ListAdap
         holder.binding.root.setOnClickListener {
             imageClickedListener(image)
         }
-
     }
-
     inner class ViewHolder(val binding: ItemImageBinding) : RecyclerView.ViewHolder(binding.root)
 }
-
 
 class ImageItemCallback : DiffUtil.ItemCallback<Image>() {
     override fun areItemsTheSame(oldItem: Image, newItem: Image): Boolean =

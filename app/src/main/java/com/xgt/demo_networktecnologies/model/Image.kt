@@ -7,9 +7,11 @@ data class Image(
     @SerializedName("id")
     @Expose
     val id: String,
+
     @SerializedName("name")
     @Expose
     val name: String,
+
     @SerializedName("imageUrl")
     @Expose
     val imageUrl: String

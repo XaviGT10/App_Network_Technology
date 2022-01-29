@@ -7,9 +7,11 @@ data class TecnologyRequest(
     @SerializedName("name")
     @Expose
     val name: String,
+
     @SerializedName("description")
     @Expose
     val description: String,
+
     @SerializedName("imageUrl")
     @Expose
     val imageUrl: String = ""

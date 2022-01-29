@@ -18,9 +18,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-
 class ImageListFragment : Fragment() {
-
     private var _binding: FragmentImageListBinding? = null
     private val binding
         get() = _binding!!
@@ -47,7 +45,6 @@ class ImageListFragment : Fragment() {
         binding.rvImages.layoutManager = GridLayoutManager(context, 2)
         binding.rvImages.adapter = adapter
 
-
         TecnologyApi.service.getImages().enqueue(object : Callback<List<Image>> {
             override fun onResponse(call: Call<List<Image>>, response: Response<List<Image>>) {
                 if (response.isSuccessful) {
@@ -71,5 +68,4 @@ class ImageListFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
 }
